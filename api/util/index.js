@@ -16,5 +16,5 @@ module.exports = {
         if(!token) return res.status(403).send({ message });
         req.decoded = decoded;
         req.userId = decoded.id;
-    },
+    }
 }
