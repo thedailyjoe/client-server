@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Collaborate() {
+const Collaborate = props => {
 
     return (
         <div>WORK WITH US</div>
     );
 
-}
+};
 
 export default Collaborate;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Products() {
+const Products = props => {
 
     return (
         <div>PRODUCTS</div>
     );
 
-}
+};
 
 export default Products;

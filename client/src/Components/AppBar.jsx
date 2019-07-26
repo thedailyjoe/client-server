@@ -46,7 +46,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function DenseAppBar() {
+const MainAppBar = props => {
     const classes = useStyles();
 
     return (
@@ -76,4 +76,6 @@ export default function DenseAppBar() {
             </AppBar>
         </div>
     );
-}
+};
+
+export default MainAppBar;

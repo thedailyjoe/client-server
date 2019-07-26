@@ -1,3 +1,8 @@
 .env
 node_modules
 data
+.idea/misc.xml
+.idea/client-server.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml

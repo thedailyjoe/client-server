@@ -16,7 +16,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 
 
-function App() {
+const App = props => {
     return (
         <MuiThemeProvider theme={theme}>
             <CssBaseline>
@@ -28,7 +28,7 @@ function App() {
 
                         <Route exact path="/" component={Home} />
                         <Route path="/products" component={Products} />
-                        <Route path="/workwithus" component={Collaborate} />
+                        <Route path="/collaborate" component={Collaborate} />
                         <Route path="/about" component={About} />
                         <Route path="/cart" component={Cart} />
                     </div>
@@ -36,6 +36,6 @@ function App() {
             </CssBaseline>
         </MuiThemeProvider>
     );
-}
+};
 
 export default App;

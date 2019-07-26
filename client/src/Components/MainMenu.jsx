@@ -58,7 +58,7 @@ const useStyles = makeStyles({
         },
     },
 });
-function MainMenu() {
+const MainMenu = props => {
     const classes = useStyles();
     const [state, setState] = React.useState({
         left: false,
@@ -130,6 +130,6 @@ function MainMenu() {
             </Drawer>
         </div>
     );
-}
+};
 
 export default MainMenu;
