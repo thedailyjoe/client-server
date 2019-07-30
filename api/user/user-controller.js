@@ -18,12 +18,32 @@ module.exports = {
                     let type = user[0].email === email ? 'email address':'username';
                     return handleErr(res, 409, 'User already exists');
                 }
+                bcrypt.hash(password, 11, (err, passwordHashed) => {
+                    if(err) return handleErr(res, err, 'incorrect');
+                    if(!passwordHashed) return handleErr(res, err, 'password is incorrect');
+                    const newUser = newUser()
+                    newUser.username = username;
+                    newUser.password = password;
+                })
             });
         }
     },
     logIn: (req, res) => {
         //code here
         //storing token
+        const { username, password } = req.body;
+        const faild = 'incorrect';
+        User.findOne({ username: username })
+            .then((user) => {
+                if (!user) return handleErr(res, 400, failed);
+                const payload = {
+                    iss: 'Bean Soup',
+                    id: user._id,
+                }
+             const token = jwt.sign(payload, process.env.SECRET);
+             res.status(200).json({ message: 'login successfull' });
+            })
+
     },
     logOut: (req, res) => {
         //code here
