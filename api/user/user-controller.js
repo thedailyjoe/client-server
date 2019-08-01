@@ -52,5 +52,12 @@ module.exports = {
     forgotPassword: (req, res) => {
         //twilio verification for new password
         //or reset email
+        const { email } = req.body;
+        User.findOne({ email }, (err, user) => {
+            if (err) return handleErr(res, 500, 'Server Error');
+            if (!user) return handleErr(res, 403, 'Could not find user');
+            const random = ((Math.random() * 100) + 1).toString();
+            const token = crypto.MD5(random);
+        })
     }
 }
