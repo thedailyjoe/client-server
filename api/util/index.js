@@ -5,10 +5,10 @@ module.exports = {
         return status === 500 ? res.status(500).send({ message: 'There was a problem with the server'}) : res.status(status).send({ message });
     },
     format: (first, last) => {
-        String.prototype.capatalize = function() {
+        String.prototype.capitalize = function() {
             return this.charAt(0).toUpperCase() + this.slice(1);
         }
-        return `${first.capatalize()} ${last.capatalize()}`;
+        return `${first.capitalize()} ${last.capitalize()}`;
     },
     isLoggedIn: (req, res) => {
         const message = "You are not authorized";
